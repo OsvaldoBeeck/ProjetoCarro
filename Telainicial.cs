@@ -46,5 +46,24 @@ namespace ProjetoCarro
 
             
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            CadastroVeiculoConsignado cadastroVeiculoConsignado = new CadastroVeiculoConsignado();
+
+            this.Hide();
+
+            cadastroVeiculoConsignado.Show();
+        }
     }
 }

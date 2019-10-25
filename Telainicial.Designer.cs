@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnCadastrarVeiculoLoja = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -51,13 +50,6 @@
             this.btnCadastrarVeiculoLoja.UseVisualStyleBackColor = true;
             this.btnCadastrarVeiculoLoja.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 10;
-            // 
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(312, 240);
@@ -76,10 +68,11 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "Sair";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(42, 227);
+            this.button5.Location = new System.Drawing.Point(576, 203);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(212, 65);
             this.button5.TabIndex = 4;
@@ -94,10 +87,11 @@
             this.button6.TabIndex = 5;
             this.button6.Text = "Cadastrar veículo consignado";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.Button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(576, 240);
+            this.button7.Location = new System.Drawing.Point(576, 345);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(212, 65);
             this.button7.TabIndex = 6;
@@ -106,7 +100,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(576, 142);
+            this.button8.Location = new System.Drawing.Point(576, 274);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(212, 65);
             this.button8.TabIndex = 7;
@@ -156,7 +150,6 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.btnCadastrarVeiculoLoja);
             this.Name = "Telainicial";
             this.Text = "Página inicial";
@@ -167,7 +160,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastrarVeiculoLoja;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;

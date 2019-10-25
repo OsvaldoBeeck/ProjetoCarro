@@ -19,9 +19,27 @@ namespace ProjetoCarro
 
         private void TxtSim_Click(object sender, EventArgs e)
         {
+
             CadastrarVeiculoLoja cadastrarVeiculoLoja = new CadastrarVeiculoLoja();
             cadastrarVeiculoLoja.Show();
             this.Hide();
+
+        }
+
+      
+
+        internal void Show(int v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Button_simC_Click(object sender, EventArgs e)
+        {
+            CadastroVeiculoConsignado cadastroVeiculoConsignado = new CadastroVeiculoConsignado();
+
+            cadastroVeiculoConsignado.Show();
+                this.Hide();
         }
     }
-}
+    }
+

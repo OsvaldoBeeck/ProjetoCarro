@@ -55,6 +55,12 @@
     <Compile Include="CadastrarVeiculoLoja.Designer.cs">
       <DependentUpon>CadastrarVeiculoLoja.cs</DependentUpon>
     </Compile>
+    <Compile Include="CadastroVeiculoConsignado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadastroVeiculoConsignado.Designer.cs">
+      <DependentUpon>CadastroVeiculoConsignado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Carro.cs" />
     <Compile Include="CarroConsignado.cs" />
     <Compile Include="CarroLoja.cs" />
@@ -106,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="CadastrarVeiculoLoja.resx">
       <DependentUpon>CadastrarVeiculoLoja.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadastroVeiculoConsignado.resx">
+      <DependentUpon>CadastroVeiculoConsignado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>

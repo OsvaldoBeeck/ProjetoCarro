@@ -65,6 +65,10 @@ namespace ProjetoCarro
                 objCmd.Parameters.Add("@preco_veiculo", MySqlDbType.Double).Value = precoVeiculo.Text;
                 objCmd.Parameters.Add("@ano_veiculo", MySqlDbType.Int32).Value = cmbAnoVeiculo.Text;
 
+                
+
+                
+
 
                 objCmd.ExecuteNonQuery();
                 MessageBox.Show("Gravado no banco de dados com sucesso!!");

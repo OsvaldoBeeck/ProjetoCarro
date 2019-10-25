@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace ProjetoCarro
 {
@@ -20,27 +21,78 @@ namespace ProjetoCarro
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
-            objcon.Open();
+            txt_VeiculoPesquisa.Text = "";
+            txt_CorPesquisa.Text = "";
+            txt_PrecoPesquisa.Text = "";
+            txt_AnoPesquisa.Text = "";
+            try
+            {
 
-            MySqlCommand objCmd = new MySqlCommand("SELECT `Nome`, `Placa`, `Cor`, `Preco` , `Ano`  FROM `veiculos` WHERE Placa = ?", objcon);
 
-            objCmd.Parameters.Clear();
+                MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
+                objcon.Open();
 
-            objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar, 8).Value = txtPlaca.Text;
-            objCmd.CommandType = CommandType.Text;
+                MySqlCommand objCmd = new MySqlCommand("SELECT `Nome`, `Placa`, `Cor`, `Preco` , `Ano`  FROM `veiculos` WHERE Placa = ?", objcon);
 
-            //recebe o conteudo que vem do banco
-            MySqlDataReader dr;
-            dr = objCmd.ExecuteReader();
-            dr.Read();
+                objCmd.Parameters.Clear();
 
-            txt_VeiculoPesquisa.Text = dr.GetString(0);
-            txt_CorPesquisa.Text = dr.GetString(2);
-            txt_PrecoPesquisa.Text = dr.GetString(3);
-            txt_AnoPesquisa.Text = dr.GetString(4);
+                objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar, 8).Value = txtPlaca.Text;
+                objCmd.CommandType = CommandType.Text;
 
-            objcon.Close();
+                //recebe o conteudo que vem do banco
+                MySqlDataReader dr;
+                dr = objCmd.ExecuteReader();
+                dr.Read();
+
+                radioButton_Loja.Checked = true;
+                radioButton_Consig.Enabled = false;
+                radioButton_Consig.Checked = false;
+                txt_VeiculoPesquisa.Text = dr.GetString(0);
+                txt_CorPesquisa.Text = dr.GetString(2);
+                txt_PrecoPesquisa.Text = dr.GetDouble(3).ToString("C", CultureInfo.CurrentCulture);
+                txt_AnoPesquisa.Text = dr.GetString(4);
+                
+
+            }
+            catch(Exception erro)
+            {
+                MessageBox.Show("Carro não encontrado na Loja!");
+            }
+
+                
+
+                if (txt_VeiculoPesquisa.Text == "")
+                {
+                radioButton_Consig.Checked = true;
+                radioButton_Loja.Enabled = false;
+                radioButton_Loja.Checked = false;
+                MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
+                objcon.Open();
+
+                MySqlCommand objCmd2 = new MySqlCommand("SELECT `Nome`, `Placa`, `Cor`, `Preco` , `Ano` ,`Proprietario` FROM `consignado` WHERE Placa = ?", objcon);
+                MySqlDataReader dr2;
+
+                objCmd2.Parameters.Clear();
+
+                    objCmd2.Parameters.Add("@Placa", MySqlDbType.VarChar, 8).Value = txtPlaca.Text;
+                    objCmd2.CommandType = CommandType.Text;
+
+                    //recebe o conteudo que vem do banco
+
+                    dr2 = objCmd2.ExecuteReader();
+                    dr2.Read();
+
+                    txt_VeiculoPesquisa.Text = dr2.GetString(0);
+                    txt_CorPesquisa.Text = dr2.GetString(2);
+                    txt_PrecoPesquisa.Text = dr2.GetDouble(3).ToString("C", CultureInfo.CurrentCulture);
+                    txt_AnoPesquisa.Text = dr2.GetString(4);
+                    txt_proprietarioPesq.Text = dr2.GetString(5);
+                    
+
+                objcon.Close();
+            }
+
+            
 
 
         }

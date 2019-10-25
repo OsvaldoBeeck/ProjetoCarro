@@ -38,7 +38,7 @@ namespace ProjetoCarro
                 dr = objCmd.ExecuteReader();
                 dr.Read();
 
-                double aux;
+                
                 txt_VeiculoVenda.Text = dr.GetString(0);
                 txt_CorVenda.Text = dr.GetString(1);
                 txt_PrecoVenda.Text = dr.GetDouble(2).ToString("C", CultureInfo.CurrentCulture);
