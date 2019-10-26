@@ -39,10 +39,13 @@ namespace ProjetoCarro
                 objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar, 8).Value = txtPlaca.Text;
                 objCmd.CommandType = CommandType.Text;
 
-                //recebe o conteudo que vem do banco
+                
                 MySqlDataReader dr;
                 dr = objCmd.ExecuteReader();
                 dr.Read();
+
+                
+               
 
                 radioButton_Loja.Checked = true;
                 radioButton_Consig.Enabled = false;
@@ -63,16 +66,19 @@ namespace ProjetoCarro
 
                 if (txt_VeiculoPesquisa.Text == "")
                 {
-                radioButton_Consig.Checked = true;
-                radioButton_Loja.Enabled = false;
-                radioButton_Loja.Checked = false;
-                MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
-                objcon.Open();
 
-                MySqlCommand objCmd2 = new MySqlCommand("SELECT `Nome`, `Placa`, `Cor`, `Preco` , `Ano` ,`Proprietario` FROM `consignado` WHERE Placa = ?", objcon);
-                MySqlDataReader dr2;
+                try
+                {
+                    radioButton_Consig.Checked = true;
+                    radioButton_Loja.Enabled = false;
+                    radioButton_Loja.Checked = false;
+                    MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
+                    objcon.Open();
 
-                objCmd2.Parameters.Clear();
+                    MySqlCommand objCmd2 = new MySqlCommand("SELECT `Nome`, `Placa`, `Cor`, `Preco` , `Ano` ,`Proprietario` FROM `consignado` WHERE Placa = ?", objcon);
+                    MySqlDataReader dr2;
+
+                    objCmd2.Parameters.Clear();
 
                     objCmd2.Parameters.Add("@Placa", MySqlDbType.VarChar, 8).Value = txtPlaca.Text;
                     objCmd2.CommandType = CommandType.Text;
@@ -87,9 +93,18 @@ namespace ProjetoCarro
                     txt_PrecoPesquisa.Text = dr2.GetDouble(3).ToString("C", CultureInfo.CurrentCulture);
                     txt_AnoPesquisa.Text = dr2.GetString(4);
                     txt_proprietarioPesq.Text = dr2.GetString(5);
-                    
 
-                objcon.Close();
+
+                    objcon.Close();
+                }
+
+                catch (Exception erro)
+                {
+                    MessageBox.Show("CARRO NÃO ENCONTRADO NOS CONSIGNADOS!");
+                    txtPlaca.Text = "";
+                    txtPlaca.Focus();
+                }
+                
             }
 
             

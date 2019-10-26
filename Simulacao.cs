@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Globalization;
+using MySql.Data.Types;
+using MySql.Data.Common;
 
 namespace ProjetoCarro
 {
@@ -40,7 +42,7 @@ namespace ProjetoCarro
 
             score = numAleatorio.Next(0, 1000);
 
-            double valor; 
+            double valor = 0; 
 
             if (txt_Simulacao.Text.Length < 11 || txt_Simulacao.Text.Length > 11 )
             {
@@ -87,9 +89,33 @@ namespace ProjetoCarro
                     txt_ResultSimulacao.Text = valor.ToString("C", CultureInfo.CurrentCulture);
                     MessageBox.Show("VALOR ILIMITADO!");
                 }
+                MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
+                MySqlCommand cmd = new MySqlCommand(@"SELECT * FROM veiculos WHERE preco <= ?", conn);
+                cmd.Parameters.Add("@valor", MySqlDbType.Double).Value = valor;
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable table = new DataTable("veiculos");
+                da.Fill(table);
+
+          
+                ListViewItem iItem;
+                
+                foreach (DataRow row in table.Rows)
+                {
+                    iItem = new ListViewItem();
+                  
+                    foreach (DataColumn c in table.Columns)
+                    {
+                        Console.WriteLine(row[c]);
+                    }
+
+                    dataGridView1.DataSource = table;
+                }
             }
 
-           
+            
+
+         
            
             
         }
@@ -107,6 +133,13 @@ namespace ProjetoCarro
             label_score.Text = "------------";
             txt_ResultSimulacao.Text = "";
             txt_Simulacao.Enabled = true;
+
+            dataGridView1.DataSource = "";
+        }
+
+        private void List_simular_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
