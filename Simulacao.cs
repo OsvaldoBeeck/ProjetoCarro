@@ -110,6 +110,7 @@ namespace ProjetoCarro
                     }
 
                     dataGridView1.DataSource = table;
+                    dataGridView1.Enabled = false;
                 }
             }
 

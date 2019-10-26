@@ -19,6 +19,7 @@ namespace ProjetoCarro
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            imageLogo.Show();
        
         }
 
@@ -28,17 +29,26 @@ namespace ProjetoCarro
             string senhaofc = "admin";
 
             if (String.Equals(usuario, txtUser.Text) && String.Equals(senhaofc, txtPassword.Text))
-            {
-                
-                this.Hide();
+            {               
+                xuiObjectAnimator1.FormAnimate(this, XanderUI.XUIObjectAnimator.FormAnimation.FadeOut, 10);
                 Telainicial telainicial = new Telainicial();
-                telainicial.Show();
-
-            }
+                this.Hide();
+                telainicial.Show();        }
             else
-            {
+            {   
                 MessageBox.Show("Usuário e/ou senha incorretos!!!");
+                txtUser.Text = "";
+                txtPassword.Text = "";
+                txtUser.Focus();
             }
+
+
+
+        }
+
+        private void PictureFechar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

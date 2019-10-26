@@ -21,21 +21,7 @@ namespace ProjetoCarro
 
         private void CadastrarVeiculoLoja_Load(object sender, EventArgs e)
         {
-            cmbAnoVeiculo.Items.Add("2006");
-            cmbAnoVeiculo.Items.Add("2007");
-            cmbAnoVeiculo.Items.Add("2008");
-            cmbAnoVeiculo.Items.Add("2009");
-            cmbAnoVeiculo.Items.Add("2010");
-            cmbAnoVeiculo.Items.Add("2011");
-            cmbAnoVeiculo.Items.Add("2012");
-            cmbAnoVeiculo.Items.Add("2013");
-            cmbAnoVeiculo.Items.Add("2014");
-            cmbAnoVeiculo.Items.Add("2015");
-            cmbAnoVeiculo.Items.Add("2016");
-            cmbAnoVeiculo.Items.Add("2017");
-            cmbAnoVeiculo.Items.Add("2018");
-            cmbAnoVeiculo.Items.Add("2019");
-            cmbAnoVeiculo.Items.Add("2020");
+       
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,7 +50,7 @@ namespace ProjetoCarro
                 objCmd.Parameters.Add("@placa_veiculo", MySqlDbType.VarChar, 60).Value = placaVeiculo.Text;
                 objCmd.Parameters.Add("@cor_veiculo", MySqlDbType.VarChar, 60).Value = corVeiculo.Text;
                 objCmd.Parameters.Add("@preco_veiculo", MySqlDbType.Double).Value = precoVeiculo.Text;
-                objCmd.Parameters.Add("@ano_veiculo", MySqlDbType.Int32).Value = cmbAnoVeiculo.Text;
+                objCmd.Parameters.Add("@ano_veiculo", MySqlDbType.Int32).Value = txtAno.Text;
 
                 
 
@@ -86,9 +72,5 @@ namespace ProjetoCarro
             }
         }
 
-        private void CorVeiculo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
