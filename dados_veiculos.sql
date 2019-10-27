@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Out-2019 às 03:03
+-- Tempo de geração: 27-Out-2019 às 08:09
 -- Versão do servidor: 10.4.8-MariaDB
--- versão do PHP: 7.3.10
+-- versão do PHP: 7.1.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,19 +25,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `consignado`
+-- Estrutura da tabela `lucro`
 --
 
-CREATE TABLE `consignado` (
-  `Placa` varchar(8) NOT NULL,
-  `Nome` varchar(50) NOT NULL,
-  `Cor` varchar(15) NOT NULL,
-  `Preco` double NOT NULL,
-  `Ano` varchar(5) NOT NULL,
-  `Proprietario` varchar(50) NOT NULL,
-  `Taxa` double NOT NULL,
-  `Observacoes` varchar(255) NOT NULL
+CREATE TABLE `lucro` (
+  `Loja` double NOT NULL,
+  `Consignado` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `lucro`
+--
+
+INSERT INTO `lucro` (`Loja`, `Consignado`) VALUES
+(0, 0);
 
 -- --------------------------------------------------------
 
@@ -50,15 +51,13 @@ CREATE TABLE `veiculos` (
   `Placa` varchar(8) NOT NULL,
   `Cor` varchar(20) NOT NULL,
   `Preco` double NOT NULL,
-  `Ano` int(11) NOT NULL
+  `Ano` int(11) NOT NULL,
+  `Status` varchar(12) NOT NULL,
+  `Tipo` varchar(12) NOT NULL,
+  `Cpf_Propietario` varchar(12) NOT NULL,
+  `Propietario` varchar(50) NOT NULL,
+  `Taxa` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `veiculos`
---
-
-INSERT INTO `veiculos` (`Nome`, `Placa`, `Cor`, `Preco`, `Ano`) VALUES
-('Golf', 'HGF2658', 'Branco', 35000, 0);
 
 -- --------------------------------------------------------
 
@@ -67,54 +66,19 @@ INSERT INTO `veiculos` (`Nome`, `Placa`, `Cor`, `Preco`, `Ano`) VALUES
 --
 
 CREATE TABLE `vendas` (
+  `Cliente` varchar(60) NOT NULL,
   `Placa` varchar(8) NOT NULL,
+  `NomeVeiculo` varchar(50) NOT NULL,
   `DataVenda` varchar(50) NOT NULL,
-  `Cliente` varchar(50) NOT NULL,
   `Telefone` varchar(50) NOT NULL,
   `Endereço` varchar(50) NOT NULL,
-  `NomeVeiculo` varchar(50) NOT NULL,
-  `PrecoVenda` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Extraindo dados da tabela `vendas`
---
-
-INSERT INTO `vendas` (`Placa`, `DataVenda`, `Cliente`, `Telefone`, `Endereço`, `NomeVeiculo`, `PrecoVenda`) VALUES
-('', '0000-00-00 00:00:00', '', '', '', '', ''),
-('abc123', '0000-00-00 00:00:00', 'sdfasdf', '123123', 'sdfasdf', 'teste', 'R$ 123,00'),
-('gfd9587', 'terça-feira, 22 de outubro de 2019', 'felipe', '1915615', 'cervezaoooooooo', 'camaro', 'R$ 200.000'),
-('peupeu', 'terça-feira, 22 de outubro de 2019', 'felipe', '342342', 'dfasdfasd', 'peupeu', 'R$ 123,00'),
-('System.W', '0000-00-00 00:00:00', 'System.Windows.Forms.TextBox, Text: dsafas', 'System.Wind', 'System.Windows.Forms.TextBox, Text: asdfasdf', 'System.Windows.Forms.TextBox, Text: Astra', 'System.Win'),
-('teste', '0000-00-00 00:00:00', 'sadfas', '2432', 'sdfgsd', 'teste', 'R$ 1.231,0'),
-('testee', '0000-00-00 00:00:00', 'sadfsd', '23423', 'agsddaf', 'testee', 'R$ 123,00');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `vendasc`
---
-
-CREATE TABLE `vendasc` (
-  `Placa` varchar(8) NOT NULL,
-  `DataVenda` varchar(12) NOT NULL,
-  `Cliente` varchar(50) NOT NULL,
-  `Telefone` varchar(50) NOT NULL,
-  `Endereço` varchar(50) NOT NULL,
-  `NomeVeiculo` varchar(50) NOT NULL,
-  `PrecoVenda` varchar(10) NOT NULL,
-  `Observacoes` varchar(255) NOT NULL
+  `PrecoVenda` double NOT NULL,
+  `Tipo` varchar(12) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Índices para tabelas despejadas
 --
-
---
--- Índices para tabela `consignado`
---
-ALTER TABLE `consignado`
-  ADD PRIMARY KEY (`Placa`);
 
 --
 -- Índices para tabela `veiculos`

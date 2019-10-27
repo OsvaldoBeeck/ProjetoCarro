@@ -46,16 +46,12 @@ namespace ProjetoCarro
             simulacao.Show(); 
         }
 
-        private void btnCadastrarVeiculoConsignado_Click(object sender, EventArgs e)
-        {
-            CadastroVeiculoConsignado cadastroVeiculoConsignado = new CadastroVeiculoConsignado();
-            this.Hide();
-            cadastroVeiculoConsignado.Show();
-        }
+        
 
         private void BtnSair_Click(object sender, EventArgs e)
         {
             this.Close();
+            Environment.Exit(0);
         }
 
         private void PictureClose_Click(object sender, EventArgs e)
@@ -70,17 +66,30 @@ namespace ProjetoCarro
 
         private void BtnApresentarVeiculos_Click(object sender, EventArgs e)
         {
-
+            ApresentarCarros apresentarCarros = new ApresentarCarros();
+            this.Hide();
+            apresentarCarros.Show();
         }
 
         private void BtnHistoricoDeVendasConsignado_Click(object sender, EventArgs e)
         {
-
+            HistoricoConsignado historico = new HistoricoConsignado();
+            this.Hide();
+            historico.Show();
         }
 
         private void BtnHistoricoDeVendasDaLoja_Click(object sender, EventArgs e)
         {
+            HistoricoLoja historico = new HistoricoLoja();
+            this.Hide();
+            historico.Show();
+        }
 
+        private void button_Lucro_Click(object sender, EventArgs e)
+        {
+            Lucro lucro = new Lucro();
+            this.Hide();
+            lucro.Show();
         }
     }
 }

@@ -56,7 +56,7 @@ namespace ProjetoCarro
                 {
                     valor = 0;
                     txt_ResultSimulacao.Text = valor.ToString("C", CultureInfo.CurrentCulture);
-                    MessageBox.Show("SCORE MUITO BAIXO PARA FINANCIAMENTO!");
+                    
                 }
                 else if (score <= 300)
                 {
@@ -90,7 +90,7 @@ namespace ProjetoCarro
                     MessageBox.Show("VALOR ILIMITADO!");
                 }
                 MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
-                MySqlCommand cmd = new MySqlCommand(@"SELECT * FROM veiculos WHERE preco <= ?", conn);
+                MySqlCommand cmd = new MySqlCommand(@"SELECT * FROM veiculos WHERE preco <= ? and Status = 'DISPONIVEL'", conn);
                 cmd.Parameters.Add("@valor", MySqlDbType.Double).Value = valor;
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -99,23 +99,37 @@ namespace ProjetoCarro
 
           
                 ListViewItem iItem;
-                
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    dataGridView1.Rows[i].DataGridView.Columns.Clear();
+                }
+
                 foreach (DataRow row in table.Rows)
                 {
                     iItem = new ListViewItem();
-                  
+                    
                     foreach (DataColumn c in table.Columns)
                     {
-                        Console.WriteLine(row[c]);
+                       
                     }
 
                     dataGridView1.DataSource = table;
-                    dataGridView1.Enabled = false;
+                    for (int i = 0; i < dataGridView1.RowCount; i++)
+                    {
+                        dataGridView1.Rows[i].ReadOnly = true;
+                    }
+
                 }
+                if (dataGridView1.RowCount == 0 && score > 100)
+                    MessageBox.Show("NÃO HÁ CARROS COM O PREÇO ACESSIVEL AO SEU SCORE!");
+            
+            if (dataGridView1.RowCount == 0 && score <= 100)
+                    MessageBox.Show("SCORE MUITO BAIXO PARA FINANCIAMENTO!");
             }
 
-            
 
+            button_Simulacao.Enabled = false;
          
            
             
@@ -135,10 +149,17 @@ namespace ProjetoCarro
             txt_ResultSimulacao.Text = "";
             txt_Simulacao.Enabled = true;
 
+            button_Simulacao.Enabled = true;
+
             dataGridView1.DataSource = "";
         }
 
         private void List_simular_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

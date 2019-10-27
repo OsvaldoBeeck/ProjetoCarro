@@ -33,16 +33,15 @@
             this.pictureClose = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCadastrarVeiculoLoja = new MaterialSkin.Controls.MaterialFlatButton();
-            this.btnCadastrarVeiculoConsignado = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnPesquisarVeiculo = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnSimulacao = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnVenderVeiculoLoja = new MaterialSkin.Controls.MaterialFlatButton();
-            this.btnVenderVeiculoConsignado = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnApresentarVeiculos = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnHistoricoDeVendasDaLoja = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnHistoricoDeVendasConsignado = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnSair = new MaterialSkin.Controls.MaterialFlatButton();
             this.xuiObjectAnimator1 = new XanderUI.XUIObjectAnimator();
+            this.button_Lucro = new MaterialSkin.Controls.MaterialFlatButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,16 +53,18 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(826, 64);
+            this.panel1.Size = new System.Drawing.Size(978, 98);
             this.panel1.TabIndex = 12;
             // 
             // pictureClose
             // 
             this.pictureClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureClose.Image")));
-            this.pictureClose.Location = new System.Drawing.Point(787, 3);
+            this.pictureClose.Location = new System.Drawing.Point(1180, 5);
+            this.pictureClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureClose.Name = "pictureClose";
-            this.pictureClose.Size = new System.Drawing.Size(36, 35);
+            this.pictureClose.Size = new System.Drawing.Size(54, 54);
             this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureClose.TabIndex = 1;
             this.pictureClose.TabStop = false;
@@ -72,9 +73,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(4, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(107, 64);
+            this.pictureBox1.Size = new System.Drawing.Size(160, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -86,34 +88,16 @@
             this.btnCadastrarVeiculoLoja.Depth = 0;
             this.btnCadastrarVeiculoLoja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCadastrarVeiculoLoja.Icon = null;
-            this.btnCadastrarVeiculoLoja.Location = new System.Drawing.Point(60, 130);
-            this.btnCadastrarVeiculoLoja.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCadastrarVeiculoLoja.Location = new System.Drawing.Point(60, 178);
+            this.btnCadastrarVeiculoLoja.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnCadastrarVeiculoLoja.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCadastrarVeiculoLoja.Name = "btnCadastrarVeiculoLoja";
             this.btnCadastrarVeiculoLoja.Primary = false;
-            this.btnCadastrarVeiculoLoja.Size = new System.Drawing.Size(196, 36);
-            this.btnCadastrarVeiculoLoja.TabIndex = 13;
-            this.btnCadastrarVeiculoLoja.Text = "Cadastrar Veículo Loja";
+            this.btnCadastrarVeiculoLoja.Size = new System.Drawing.Size(230, 36);
+            this.btnCadastrarVeiculoLoja.TabIndex = 1;
+            this.btnCadastrarVeiculoLoja.Text = "CADASTRAR VEÍCULO";
             this.btnCadastrarVeiculoLoja.UseVisualStyleBackColor = true;
             this.btnCadastrarVeiculoLoja.Click += new System.EventHandler(this.btnCadastrarVeiculoLoja_Click);
-            // 
-            // btnCadastrarVeiculoConsignado
-            // 
-            this.btnCadastrarVeiculoConsignado.AutoSize = true;
-            this.btnCadastrarVeiculoConsignado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCadastrarVeiculoConsignado.Depth = 0;
-            this.btnCadastrarVeiculoConsignado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCadastrarVeiculoConsignado.Icon = null;
-            this.btnCadastrarVeiculoConsignado.Location = new System.Drawing.Point(60, 178);
-            this.btnCadastrarVeiculoConsignado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnCadastrarVeiculoConsignado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnCadastrarVeiculoConsignado.Name = "btnCadastrarVeiculoConsignado";
-            this.btnCadastrarVeiculoConsignado.Primary = false;
-            this.btnCadastrarVeiculoConsignado.Size = new System.Drawing.Size(249, 36);
-            this.btnCadastrarVeiculoConsignado.TabIndex = 14;
-            this.btnCadastrarVeiculoConsignado.Text = "Cadastrar veículo consignado";
-            this.btnCadastrarVeiculoConsignado.UseVisualStyleBackColor = true;
-            this.btnCadastrarVeiculoConsignado.Click += new System.EventHandler(this.btnCadastrarVeiculoConsignado_Click);
             // 
             // btnPesquisarVeiculo
             // 
@@ -122,13 +106,13 @@
             this.btnPesquisarVeiculo.Depth = 0;
             this.btnPesquisarVeiculo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPesquisarVeiculo.Icon = null;
-            this.btnPesquisarVeiculo.Location = new System.Drawing.Point(60, 226);
-            this.btnPesquisarVeiculo.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnPesquisarVeiculo.Location = new System.Drawing.Point(60, 388);
+            this.btnPesquisarVeiculo.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnPesquisarVeiculo.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPesquisarVeiculo.Name = "btnPesquisarVeiculo";
             this.btnPesquisarVeiculo.Primary = false;
-            this.btnPesquisarVeiculo.Size = new System.Drawing.Size(153, 36);
-            this.btnPesquisarVeiculo.TabIndex = 15;
+            this.btnPesquisarVeiculo.Size = new System.Drawing.Size(221, 36);
+            this.btnPesquisarVeiculo.TabIndex = 4;
             this.btnPesquisarVeiculo.Text = "Pesquisar Veículo";
             this.btnPesquisarVeiculo.UseVisualStyleBackColor = true;
             this.btnPesquisarVeiculo.Click += new System.EventHandler(this.btnPesquisarVeiculo_Click);
@@ -140,13 +124,13 @@
             this.btnSimulacao.Depth = 0;
             this.btnSimulacao.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSimulacao.Icon = null;
-            this.btnSimulacao.Location = new System.Drawing.Point(60, 274);
-            this.btnSimulacao.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSimulacao.Location = new System.Drawing.Point(809, 165);
+            this.btnSimulacao.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnSimulacao.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSimulacao.Name = "btnSimulacao";
             this.btnSimulacao.Primary = false;
-            this.btnSimulacao.Size = new System.Drawing.Size(98, 36);
-            this.btnSimulacao.TabIndex = 16;
+            this.btnSimulacao.Size = new System.Drawing.Size(139, 36);
+            this.btnSimulacao.TabIndex = 5;
             this.btnSimulacao.Text = "Simulação";
             this.btnSimulacao.UseVisualStyleBackColor = true;
             this.btnSimulacao.Click += new System.EventHandler(this.btnSimulacao_Click);
@@ -158,34 +142,16 @@
             this.btnVenderVeiculoLoja.Depth = 0;
             this.btnVenderVeiculoLoja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVenderVeiculoLoja.Icon = null;
-            this.btnVenderVeiculoLoja.Location = new System.Drawing.Point(60, 322);
-            this.btnVenderVeiculoLoja.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnVenderVeiculoLoja.Location = new System.Drawing.Point(60, 318);
+            this.btnVenderVeiculoLoja.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnVenderVeiculoLoja.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnVenderVeiculoLoja.Name = "btnVenderVeiculoLoja";
             this.btnVenderVeiculoLoja.Primary = false;
-            this.btnVenderVeiculoLoja.Size = new System.Drawing.Size(169, 36);
-            this.btnVenderVeiculoLoja.TabIndex = 17;
-            this.btnVenderVeiculoLoja.Text = "Vender Veículo loja";
+            this.btnVenderVeiculoLoja.Size = new System.Drawing.Size(189, 36);
+            this.btnVenderVeiculoLoja.TabIndex = 3;
+            this.btnVenderVeiculoLoja.Text = "VENDER VEÍCULO";
             this.btnVenderVeiculoLoja.UseVisualStyleBackColor = true;
             this.btnVenderVeiculoLoja.Click += new System.EventHandler(this.btnVenderVeiculoLoja_Click);
-            // 
-            // btnVenderVeiculoConsignado
-            // 
-            this.btnVenderVeiculoConsignado.AutoSize = true;
-            this.btnVenderVeiculoConsignado.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnVenderVeiculoConsignado.Depth = 0;
-            this.btnVenderVeiculoConsignado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnVenderVeiculoConsignado.Icon = null;
-            this.btnVenderVeiculoConsignado.Location = new System.Drawing.Point(591, 215);
-            this.btnVenderVeiculoConsignado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnVenderVeiculoConsignado.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnVenderVeiculoConsignado.Name = "btnVenderVeiculoConsignado";
-            this.btnVenderVeiculoConsignado.Primary = false;
-            this.btnVenderVeiculoConsignado.Size = new System.Drawing.Size(222, 36);
-            this.btnVenderVeiculoConsignado.TabIndex = 18;
-            this.btnVenderVeiculoConsignado.Text = "Vender Veículo Consignado";
-            this.btnVenderVeiculoConsignado.UseVisualStyleBackColor = true;
-            this.btnVenderVeiculoConsignado.Click += new System.EventHandler(this.btnVenderVeiculoConsignado_Click);
             // 
             // btnApresentarVeiculos
             // 
@@ -194,13 +160,13 @@
             this.btnApresentarVeiculos.Depth = 0;
             this.btnApresentarVeiculos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnApresentarVeiculos.Icon = null;
-            this.btnApresentarVeiculos.Location = new System.Drawing.Point(639, 263);
-            this.btnApresentarVeiculos.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnApresentarVeiculos.Location = new System.Drawing.Point(60, 245);
+            this.btnApresentarVeiculos.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnApresentarVeiculos.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnApresentarVeiculos.Name = "btnApresentarVeiculos";
             this.btnApresentarVeiculos.Primary = false;
-            this.btnApresentarVeiculos.Size = new System.Drawing.Size(174, 36);
-            this.btnApresentarVeiculos.TabIndex = 19;
+            this.btnApresentarVeiculos.Size = new System.Drawing.Size(253, 36);
+            this.btnApresentarVeiculos.TabIndex = 2;
             this.btnApresentarVeiculos.Text = "Apresentar Veículos";
             this.btnApresentarVeiculos.UseVisualStyleBackColor = true;
             this.btnApresentarVeiculos.Click += new System.EventHandler(this.BtnApresentarVeiculos_Click);
@@ -212,13 +178,13 @@
             this.btnHistoricoDeVendasDaLoja.Depth = 0;
             this.btnHistoricoDeVendasDaLoja.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHistoricoDeVendasDaLoja.Icon = null;
-            this.btnHistoricoDeVendasDaLoja.Location = new System.Drawing.Point(586, 311);
-            this.btnHistoricoDeVendasDaLoja.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnHistoricoDeVendasDaLoja.Location = new System.Drawing.Point(616, 245);
+            this.btnHistoricoDeVendasDaLoja.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnHistoricoDeVendasDaLoja.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHistoricoDeVendasDaLoja.Name = "btnHistoricoDeVendasDaLoja";
             this.btnHistoricoDeVendasDaLoja.Primary = false;
-            this.btnHistoricoDeVendasDaLoja.Size = new System.Drawing.Size(227, 36);
-            this.btnHistoricoDeVendasDaLoja.TabIndex = 20;
+            this.btnHistoricoDeVendasDaLoja.Size = new System.Drawing.Size(332, 36);
+            this.btnHistoricoDeVendasDaLoja.TabIndex = 6;
             this.btnHistoricoDeVendasDaLoja.Text = "Histórico de vendas da loja";
             this.btnHistoricoDeVendasDaLoja.UseVisualStyleBackColor = true;
             this.btnHistoricoDeVendasDaLoja.Click += new System.EventHandler(this.BtnHistoricoDeVendasDaLoja_Click);
@@ -230,13 +196,13 @@
             this.btnHistoricoDeVendasConsignado.Depth = 0;
             this.btnHistoricoDeVendasConsignado.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHistoricoDeVendasConsignado.Icon = null;
-            this.btnHistoricoDeVendasConsignado.Location = new System.Drawing.Point(555, 359);
-            this.btnHistoricoDeVendasConsignado.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnHistoricoDeVendasConsignado.Location = new System.Drawing.Point(569, 318);
+            this.btnHistoricoDeVendasConsignado.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnHistoricoDeVendasConsignado.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnHistoricoDeVendasConsignado.Name = "btnHistoricoDeVendasConsignado";
             this.btnHistoricoDeVendasConsignado.Primary = false;
-            this.btnHistoricoDeVendasConsignado.Size = new System.Drawing.Size(258, 36);
-            this.btnHistoricoDeVendasConsignado.TabIndex = 21;
+            this.btnHistoricoDeVendasConsignado.Size = new System.Drawing.Size(379, 36);
+            this.btnHistoricoDeVendasConsignado.TabIndex = 7;
             this.btnHistoricoDeVendasConsignado.Text = "Histórico de vendas consignado";
             this.btnHistoricoDeVendasConsignado.UseVisualStyleBackColor = true;
             this.btnHistoricoDeVendasConsignado.Click += new System.EventHandler(this.BtnHistoricoDeVendasConsignado_Click);
@@ -248,37 +214,53 @@
             this.btnSair.Depth = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSair.Icon = null;
-            this.btnSair.Location = new System.Drawing.Point(437, 323);
-            this.btnSair.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSair.Location = new System.Drawing.Point(431, 444);
+            this.btnSair.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.btnSair.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSair.Name = "btnSair";
             this.btnSair.Primary = false;
-            this.btnSair.Size = new System.Drawing.Size(51, 36);
-            this.btnSair.TabIndex = 22;
+            this.btnSair.Size = new System.Drawing.Size(68, 36);
+            this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
+            // button_Lucro
+            // 
+            this.button_Lucro.AutoSize = true;
+            this.button_Lucro.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.button_Lucro.Depth = 0;
+            this.button_Lucro.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_Lucro.Icon = null;
+            this.button_Lucro.Location = new System.Drawing.Point(847, 388);
+            this.button_Lucro.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
+            this.button_Lucro.MouseState = MaterialSkin.MouseState.HOVER;
+            this.button_Lucro.Name = "button_Lucro";
+            this.button_Lucro.Primary = false;
+            this.button_Lucro.Size = new System.Drawing.Size(101, 36);
+            this.button_Lucro.TabIndex = 8;
+            this.button_Lucro.Text = "LUCROS";
+            this.button_Lucro.UseVisualStyleBackColor = true;
+            this.button_Lucro.Click += new System.EventHandler(this.button_Lucro_Click);
+            // 
             // Telainicial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(826, 453);
+            this.ClientSize = new System.Drawing.Size(978, 697);
+            this.Controls.Add(this.button_Lucro);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnHistoricoDeVendasConsignado);
             this.Controls.Add(this.btnHistoricoDeVendasDaLoja);
             this.Controls.Add(this.btnApresentarVeiculos);
-            this.Controls.Add(this.btnVenderVeiculoConsignado);
             this.Controls.Add(this.btnVenderVeiculoLoja);
             this.Controls.Add(this.btnSimulacao);
             this.Controls.Add(this.btnPesquisarVeiculo);
-            this.Controls.Add(this.btnCadastrarVeiculoConsignado);
             this.Controls.Add(this.btnCadastrarVeiculoLoja);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Telainicial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Página inicial";
@@ -295,15 +277,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureClose;
         private MaterialSkin.Controls.MaterialFlatButton btnCadastrarVeiculoLoja;
-        private MaterialSkin.Controls.MaterialFlatButton btnCadastrarVeiculoConsignado;
         private MaterialSkin.Controls.MaterialFlatButton btnPesquisarVeiculo;
         private MaterialSkin.Controls.MaterialFlatButton btnSimulacao;
         private MaterialSkin.Controls.MaterialFlatButton btnVenderVeiculoLoja;
-        private MaterialSkin.Controls.MaterialFlatButton btnVenderVeiculoConsignado;
         private MaterialSkin.Controls.MaterialFlatButton btnApresentarVeiculos;
         private MaterialSkin.Controls.MaterialFlatButton btnHistoricoDeVendasDaLoja;
         private MaterialSkin.Controls.MaterialFlatButton btnHistoricoDeVendasConsignado;
         private MaterialSkin.Controls.MaterialFlatButton btnSair;
         private XanderUI.XUIObjectAnimator xuiObjectAnimator1;
+        private MaterialSkin.Controls.MaterialFlatButton button_Lucro;
     }
 }

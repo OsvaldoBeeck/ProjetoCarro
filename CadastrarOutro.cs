@@ -33,13 +33,7 @@ namespace ProjetoCarro
             throw new NotImplementedException();
         }
 
-        private void Button_simC_Click(object sender, EventArgs e)
-        {
-            CadastroVeiculoConsignado cadastroVeiculoConsignado = new CadastroVeiculoConsignado();
-
-            cadastroVeiculoConsignado.Show();
-                this.Hide();
-        }
+       
     }
     }
 

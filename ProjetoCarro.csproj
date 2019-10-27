@@ -50,6 +50,8 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Logging.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
@@ -112,23 +114,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApresentarCarros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApresentarCarros.Designer.cs">
+      <DependentUpon>ApresentarCarros.cs</DependentUpon>
+    </Compile>
     <Compile Include="CadastrarVeiculoLoja.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CadastrarVeiculoLoja.Designer.cs">
       <DependentUpon>CadastrarVeiculoLoja.cs</DependentUpon>
     </Compile>
-    <Compile Include="CadastroVeiculoConsignado.cs">
+    <Compile Include="HistoricoConsignado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CadastroVeiculoConsignado.Designer.cs">
-      <DependentUpon>CadastroVeiculoConsignado.cs</DependentUpon>
+    <Compile Include="HistoricoConsignado.Designer.cs">
+      <DependentUpon>HistoricoConsignado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Carro.cs" />
-    <Compile Include="CarroConsignado.cs" />
-    <Compile Include="CarroLoja.cs" />
-    <Compile Include="Cliente.cs" />
-    <Compile Include="IAvalia1.cs" />
+    <Compile Include="HistoricoLoja.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoricoLoja.Designer.cs">
+      <DependentUpon>HistoricoLoja.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +149,12 @@
     </Compile>
     <Compile Include="CadastrarOutro.Designer.cs">
       <DependentUpon>CadastrarOutro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lucro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lucro.Designer.cs">
+      <DependentUpon>Lucro.cs</DependentUpon>
     </Compile>
     <Compile Include="PesquisaPlaca.cs">
       <SubType>Form</SubType>
@@ -173,17 +188,26 @@
     <Compile Include="VenderVeiculos.Designer.cs">
       <DependentUpon>VenderVeiculos.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ApresentarCarros.resx">
+      <DependentUpon>ApresentarCarros.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CadastrarVeiculoLoja.resx">
       <DependentUpon>CadastrarVeiculoLoja.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CadastroVeiculoConsignado.resx">
-      <DependentUpon>CadastroVeiculoConsignado.cs</DependentUpon>
+    <EmbeddedResource Include="HistoricoConsignado.resx">
+      <DependentUpon>HistoricoConsignado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoricoLoja.resx">
+      <DependentUpon>HistoricoLoja.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CadastrarOutro.resx">
       <DependentUpon>CadastrarOutro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lucro.resx">
+      <DependentUpon>Lucro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PesquisaPlaca.resx">
       <DependentUpon>PesquisaPlaca.cs</DependentUpon>
