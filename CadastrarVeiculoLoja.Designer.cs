@@ -38,7 +38,9 @@
             this.lblPlaca = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureMinimize = new System.Windows.Forms.PictureBox();
             this.pictureClose = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nomeVeiculo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.kmVeiculo = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -46,24 +48,26 @@
             this.corVeiculo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.placaVeiculo = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtAno = new MaterialSkin.Controls.MaterialSingleLineTextField();
-            this.radioButton_LOJA = new System.Windows.Forms.RadioButton();
-            this.radioButton_Consignado = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Proprietario = new System.Windows.Forms.TextBox();
             this.txt_CPF = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_Taxa = new System.Windows.Forms.TextBox();
+            this.radioButton_Consignado = new System.Windows.Forms.RadioButton();
+            this.radioButton_LOJA = new System.Windows.Forms.RadioButton();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.Location = new System.Drawing.Point(554, 511);
+            this.btnCadastrar.Location = new System.Drawing.Point(462, 511);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(206, 57);
+            this.btnCadastrar.Size = new System.Drawing.Size(206, 58);
             this.btnCadastrar.TabIndex = 10;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
@@ -71,9 +75,10 @@
             // 
             // btnVoltar
             // 
-            this.btnVoltar.Location = new System.Drawing.Point(270, 511);
+            this.btnVoltar.Location = new System.Drawing.Point(227, 511);
+            this.btnVoltar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVoltar.Name = "btnVoltar";
-            this.btnVoltar.Size = new System.Drawing.Size(183, 57);
+            this.btnVoltar.Size = new System.Drawing.Size(183, 58);
             this.btnVoltar.TabIndex = 11;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.UseVisualStyleBackColor = true;
@@ -98,7 +103,7 @@
             this.lblKm.BackColor = System.Drawing.Color.Transparent;
             this.lblKm.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKm.ForeColor = System.Drawing.Color.Black;
-            this.lblKm.Location = new System.Drawing.Point(608, 303);
+            this.lblKm.Location = new System.Drawing.Point(608, 302);
             this.lblKm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblKm.Name = "lblKm";
             this.lblKm.Size = new System.Drawing.Size(65, 36);
@@ -137,7 +142,7 @@
             this.lblPlaca.BackColor = System.Drawing.Color.Transparent;
             this.lblPlaca.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPlaca.ForeColor = System.Drawing.Color.Black;
-            this.lblPlaca.Location = new System.Drawing.Point(88, 243);
+            this.lblPlaca.Location = new System.Drawing.Point(88, 242);
             this.lblPlaca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPlaca.Name = "lblPlaca";
             this.lblPlaca.Size = new System.Drawing.Size(104, 36);
@@ -150,7 +155,7 @@
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.Black;
-            this.lblNome.Location = new System.Drawing.Point(86, 183);
+            this.lblNome.Location = new System.Drawing.Point(86, 182);
             this.lblNome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(109, 36);
@@ -160,7 +165,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pictureMinimize);
             this.panel1.Controls.Add(this.pictureClose);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -169,16 +176,42 @@
             this.panel1.Size = new System.Drawing.Size(952, 98);
             this.panel1.TabIndex = 20;
             // 
+            // pictureMinimize
+            // 
+            this.pictureMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pictureMinimize.Image")));
+            this.pictureMinimize.Location = new System.Drawing.Point(865, 0);
+            this.pictureMinimize.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureMinimize.Name = "pictureMinimize";
+            this.pictureMinimize.Size = new System.Drawing.Size(44, 44);
+            this.pictureMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureMinimize.TabIndex = 26;
+            this.pictureMinimize.TabStop = false;
+            this.pictureMinimize.Click += new System.EventHandler(this.PictureMinimize_Click);
+            // 
             // pictureClose
             // 
+            this.pictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureClose.Image")));
-            this.pictureClose.Location = new System.Drawing.Point(842, 5);
+            this.pictureClose.Location = new System.Drawing.Point(908, 0);
             this.pictureClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureClose.Name = "pictureClose";
-            this.pictureClose.Size = new System.Drawing.Size(54, 54);
+            this.pictureClose.Size = new System.Drawing.Size(44, 44);
             this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureClose.TabIndex = 2;
+            this.pictureClose.TabIndex = 11;
             this.pictureClose.TabStop = false;
+            this.pictureClose.Click += new System.EventHandler(this.PictureClose_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(290, 25);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(409, 43);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Cadastrar veículo loja";
             // 
             // pictureBox1
             // 
@@ -215,7 +248,7 @@
             this.kmVeiculo.BackColor = System.Drawing.Color.White;
             this.kmVeiculo.Depth = 0;
             this.kmVeiculo.Hint = "";
-            this.kmVeiculo.Location = new System.Drawing.Point(690, 303);
+            this.kmVeiculo.Location = new System.Drawing.Point(690, 302);
             this.kmVeiculo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.kmVeiculo.MaxLength = 32767;
             this.kmVeiculo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -234,7 +267,7 @@
             this.precoVeiculo.BackColor = System.Drawing.Color.White;
             this.precoVeiculo.Depth = 0;
             this.precoVeiculo.Hint = "";
-            this.precoVeiculo.Location = new System.Drawing.Point(212, 303);
+            this.precoVeiculo.Location = new System.Drawing.Point(212, 302);
             this.precoVeiculo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.precoVeiculo.MaxLength = 32767;
             this.precoVeiculo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -253,7 +286,7 @@
             this.corVeiculo.BackColor = System.Drawing.Color.White;
             this.corVeiculo.Depth = 0;
             this.corVeiculo.Hint = "";
-            this.corVeiculo.Location = new System.Drawing.Point(691, 243);
+            this.corVeiculo.Location = new System.Drawing.Point(691, 242);
             this.corVeiculo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.corVeiculo.MaxLength = 32767;
             this.corVeiculo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -272,7 +305,7 @@
             this.placaVeiculo.BackColor = System.Drawing.Color.White;
             this.placaVeiculo.Depth = 0;
             this.placaVeiculo.Hint = "";
-            this.placaVeiculo.Location = new System.Drawing.Point(212, 243);
+            this.placaVeiculo.Location = new System.Drawing.Point(212, 242);
             this.placaVeiculo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.placaVeiculo.MaxLength = 32767;
             this.placaVeiculo.MouseState = MaterialSkin.MouseState.HOVER;
@@ -305,30 +338,6 @@
             this.txtAno.TabStop = false;
             this.txtAno.UseSystemPasswordChar = false;
             // 
-            // radioButton_LOJA
-            // 
-            this.radioButton_LOJA.AutoSize = true;
-            this.radioButton_LOJA.Checked = true;
-            this.radioButton_LOJA.Location = new System.Drawing.Point(379, 123);
-            this.radioButton_LOJA.Name = "radioButton_LOJA";
-            this.radioButton_LOJA.Size = new System.Drawing.Size(74, 24);
-            this.radioButton_LOJA.TabIndex = 27;
-            this.radioButton_LOJA.TabStop = true;
-            this.radioButton_LOJA.Text = "LOJA";
-            this.radioButton_LOJA.UseVisualStyleBackColor = true;
-            this.radioButton_LOJA.CheckedChanged += new System.EventHandler(this.radioButton_LOJA_CheckedChanged);
-            // 
-            // radioButton_Consignado
-            // 
-            this.radioButton_Consignado.AutoSize = true;
-            this.radioButton_Consignado.Location = new System.Drawing.Point(537, 123);
-            this.radioButton_Consignado.Name = "radioButton_Consignado";
-            this.radioButton_Consignado.Size = new System.Drawing.Size(143, 24);
-            this.radioButton_Consignado.TabIndex = 28;
-            this.radioButton_Consignado.Text = "CONSIGNADO";
-            this.radioButton_Consignado.UseVisualStyleBackColor = true;
-            this.radioButton_Consignado.CheckedChanged += new System.EventHandler(this.radioButton_Consignado_CheckedChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -359,17 +368,21 @@
             // 
             this.txt_Proprietario.Enabled = false;
             this.txt_Proprietario.Location = new System.Drawing.Point(212, 365);
+            this.txt_Proprietario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Proprietario.Name = "txt_Proprietario";
             this.txt_Proprietario.Size = new System.Drawing.Size(355, 26);
             this.txt_Proprietario.TabIndex = 7;
+            this.txt_Proprietario.Text = "------";
             // 
             // txt_CPF
             // 
             this.txt_CPF.Enabled = false;
             this.txt_CPF.Location = new System.Drawing.Point(690, 366);
+            this.txt_CPF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_CPF.Name = "txt_CPF";
             this.txt_CPF.Size = new System.Drawing.Size(160, 26);
             this.txt_CPF.TabIndex = 8;
+            this.txt_CPF.Text = "------";
             // 
             // label2
             // 
@@ -388,9 +401,37 @@
             // 
             this.txt_Taxa.Enabled = false;
             this.txt_Taxa.Location = new System.Drawing.Point(690, 426);
+            this.txt_Taxa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Taxa.Name = "txt_Taxa";
             this.txt_Taxa.Size = new System.Drawing.Size(160, 26);
             this.txt_Taxa.TabIndex = 9;
+            this.txt_Taxa.Text = "0";
+            // 
+            // radioButton_Consignado
+            // 
+            this.radioButton_Consignado.AutoSize = true;
+            this.radioButton_Consignado.Location = new System.Drawing.Point(537, 122);
+            this.radioButton_Consignado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_Consignado.Name = "radioButton_Consignado";
+            this.radioButton_Consignado.Size = new System.Drawing.Size(143, 24);
+            this.radioButton_Consignado.TabIndex = 28;
+            this.radioButton_Consignado.Text = "CONSIGNADO";
+            this.radioButton_Consignado.UseVisualStyleBackColor = true;
+            this.radioButton_Consignado.CheckedChanged += new System.EventHandler(this.radioButton_Consignado_CheckedChanged);
+            // 
+            // radioButton_LOJA
+            // 
+            this.radioButton_LOJA.AutoSize = true;
+            this.radioButton_LOJA.Checked = true;
+            this.radioButton_LOJA.Location = new System.Drawing.Point(379, 122);
+            this.radioButton_LOJA.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.radioButton_LOJA.Name = "radioButton_LOJA";
+            this.radioButton_LOJA.Size = new System.Drawing.Size(74, 24);
+            this.radioButton_LOJA.TabIndex = 27;
+            this.radioButton_LOJA.TabStop = true;
+            this.radioButton_LOJA.Text = "LOJA";
+            this.radioButton_LOJA.UseVisualStyleBackColor = true;
+            this.radioButton_LOJA.CheckedChanged += new System.EventHandler(this.radioButton_LOJA_CheckedChanged);
             // 
             // CadastrarVeiculoLoja
             // 
@@ -422,11 +463,14 @@
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnCadastrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CadastrarVeiculoLoja";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastrar veiculo da loja";
             this.Load += new System.EventHandler(this.CadastrarVeiculoLoja_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -445,20 +489,22 @@
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureClose;
         private MaterialSkin.Controls.MaterialSingleLineTextField nomeVeiculo;
         private MaterialSkin.Controls.MaterialSingleLineTextField kmVeiculo;
         private MaterialSkin.Controls.MaterialSingleLineTextField precoVeiculo;
         private MaterialSkin.Controls.MaterialSingleLineTextField corVeiculo;
         private MaterialSkin.Controls.MaterialSingleLineTextField placaVeiculo;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtAno;
-        private System.Windows.Forms.RadioButton radioButton_LOJA;
-        private System.Windows.Forms.RadioButton radioButton_Consignado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_Proprietario;
         private System.Windows.Forms.TextBox txt_CPF;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_Taxa;
+        private System.Windows.Forms.RadioButton radioButton_Consignado;
+        private System.Windows.Forms.RadioButton radioButton_LOJA;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureClose;
+        private System.Windows.Forms.PictureBox pictureMinimize;
     }
 }

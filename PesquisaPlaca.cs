@@ -101,9 +101,9 @@ namespace ProjetoCarro
 
         private void Button_SalvarPlaca_Click(object sender, EventArgs e)
         {
-            //passa a string de conexão
+            
             MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
-            //abre o banco de dados
+            
             objcon.Open();
 
             MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Nome=?,Cor=?,Preco=?, Ano=?, Propietario=? WHERE Placa =? ", objcon);
@@ -112,7 +112,6 @@ namespace ProjetoCarro
             objCmd.Parameters.Add("@Preco", MySqlDbType.VarChar, 20).Value = txt_PrecoPesquisa.Text;
             objCmd.Parameters.Add("@Ano", MySqlDbType.VarChar, 20).Value = txt_AnoPesquisa.Text;
             objCmd.Parameters.Add("@Propietario", MySqlDbType.VarChar, 60).Value = txt_proprietarioPesq.Text;
-            //objCmd.Parameters.Add("@ds_Endereço", MySqlDbType.VarChar, 100).Value = txtEndereco.Text;
             objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar, 20).Value = txtPlaca.Text;
             
 
@@ -122,10 +121,6 @@ namespace ProjetoCarro
             objcon.Close();
 
             MessageBox.Show("Atualização concluída com sucesso!");
-
-
-            
-
 
 
             txt_VeiculoPesquisa.Enabled = false;
@@ -149,6 +144,16 @@ namespace ProjetoCarro
         private void txt_CorPesquisa_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void PictureClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PictureMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -1202,15 +1202,22 @@
         EAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoHAKXJy/j/DLbVsTzMp0gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureFechar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAEySURBVGhD7ZjBisJAEERz0H/z5MmPFBZcWMRv28VFt95CwzBEiU53koF+UIckTneVJmmZIUmS
-        JEmSjthIH9Lh/8gXalKbHiFspbN0l34lzxDUoia16UEvd74kGphouJdaoYaZN50kd3bSj1Q2ukotIVhL
-        jbImPegVgmeI2c0bHiEWM2/QqDbA8RQDi5s33jHSEjyEV0JwrvXWC2FKiNWaNzBSv8stxOrNG+U0NX1L
-        tXmvARjCWIhSXPP8CxICBm9Sl+bh0a/Qzbff7S009ibiIUblOT6zuocYQ49mQRczoNtBNsW8sboQr5g3
-        uFav4fjZmhBajLwT3BUatd4Ki4XwMG/MHsLTvMHaenaEhfiUykZeA2lseodsq8y1sXWRQja2IHpr8SiF
-        bS0mSZIkSeLLMPwB3aIIXSXJGFEAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAADVJREFUaEPt
+        zcEJADAMA7Hsv3S7gJ8xtCDBvW8AAAAAAAAAnnfK1aXpZnVpulldmm4G8I2ZC3OAX6G/gmLQAAAAAElF
+        TkSuQmCC
+</value>
+  </data>
+  <data name="pictureClose.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAATJJREFUaEPt
+        mMGKwkAQRHPQf/PkyY8UFlxYxG/bxUW33kLDMESJTneSgX5QhyROd5UmaZkhSZIkSZKO2Egf0uH/yBdq
+        UpseIWyls3SXfiXPENSiJrXpQS93viQamGi4l1qhhpk3nSR3dtKPVDa6Si0hWEuNsiY96BWCZ4jZzRse
+        IRYzb9CoNsDxFAOLmzfeMdISPIRXQnCu9dYLYUqI1Zo3MFK/yy3E6s0b5TQ1fUu1ea8BGMJYiFJc8/wL
+        EgIGb1KX5uHRr9DNt9/tLTT2JuIhRuU5PrO6hxhDj2ZBFzOg20E2xbyxuhCvmDe4Vq/h+NmaEFqMvBPc
+        FRq13gqLhfAwb8wewtO8wdp6doSF+JTKRl4DaWx6h2yrzLWxdZFCNrYgemvxKIVtLSZJkiRJ4ssw/AHd
+        oghdJckYUQAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="xuiObjectAnimator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

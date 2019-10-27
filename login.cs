@@ -12,12 +12,12 @@ namespace ProjetoCarro
 {
     public partial class telaInicio : Form
     {
+
         public telaInicio()
         {
             InitializeComponent();
         }
 
-        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -51,6 +51,16 @@ namespace ProjetoCarro
         private void PictureFechar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PictureClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PictureMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

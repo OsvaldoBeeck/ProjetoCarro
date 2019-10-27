@@ -175,6 +175,7 @@ namespace ProjetoCarro
                     txt_ClienteVenda.Text = "";
                     txt_EnderecoVenda.Text = "";
                     txt_TelefoneVenda.Text = "";
+                    txt_PlacaVenda.Focus();
                     objcon2.Close();
                 }
                 
@@ -198,6 +199,16 @@ namespace ProjetoCarro
         private void Label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PictureClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PictureMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

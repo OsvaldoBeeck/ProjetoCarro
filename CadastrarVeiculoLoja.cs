@@ -44,39 +44,29 @@ namespace ProjetoCarro
         {
             try
             {
-                
-
-                
-                
-
                 MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
                 
                 objcon.Open();
 
                 MySqlCommand objCmd = new MySqlCommand("INSERT INTO veiculos (`Nome`, `Placa`, `Cor`, `Preco` , `Ano`, `Cpf_Propietario` ,`Propietario`,`Tipo`,`Taxa`,`Status` ) VALUES(?,?,?, ?,?, ?, ?,?,?,?)", objcon);
 
-                string tipo;
-                double taxa;
-                string proprietario;
-                string cpf;
+                string tipo =  "------";
+                double taxa = 0;
+                string proprietario = "------";
+                string cpf = "------";
 
               
 
-                if (radioButton_Consignado.Checked == true)
+                if (radioButton_LOJA.Checked == true)
+                {
+                    tipo = "LOJA";
+                }
+               else
                 {
                     tipo = "CONSIGNADO";
                     taxa = Double.Parse(txt_Taxa.Text);
                     proprietario = txt_Proprietario.Text;
                     cpf = txt_CPF.Text;
-
-                }
-               else
-                {
-                    tipo = "LOJA";
-                    taxa = 0;
-                    proprietario = "------";
-                    cpf = "------";
-                    
                 }
                
 
@@ -119,9 +109,10 @@ namespace ProjetoCarro
                 txt_Proprietario.Enabled = true;
                 txt_CPF.Enabled = true;
                 txt_Taxa.Enabled = true;
-            
-            
-            
+                txt_Proprietario.Text = " ";
+                txt_CPF.Text = " ";
+                txt_Taxa.Text = " ";
+
         }
 
         private void radioButton_LOJA_CheckedChanged(object sender, EventArgs e)
@@ -130,6 +121,19 @@ namespace ProjetoCarro
             txt_Proprietario.Enabled = false;
             txt_CPF.Enabled = false;
             txt_Taxa.Enabled = false;
+            txt_Proprietario.Text = "------";
+            txt_CPF.Text = "------";
+            txt_Taxa.Text = "0";
+        }
+
+        private void PictureClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void PictureMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
