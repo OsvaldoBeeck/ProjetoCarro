@@ -114,10 +114,11 @@ namespace ProjetoCarro
                     //abre o banco de dados
 
                     //cria o comando my sql com seus devidos parametros
-                    MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Status=?", objcon);
+                    MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Status=? WHERE Placa=?", objcon);
                     //limpa parametros
                     objCmd.Parameters.Clear();
-                    objCmd.Parameters.Add("@placa", MySqlDbType.VarChar).Value = "VENDIDO";
+                    objCmd.Parameters.Add("@Status", MySqlDbType.VarChar).Value = "VENDIDO";
+                    objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar).Value = txt_PlacaVenda.Text;
 
                     //executa o comando
                     objCmd.CommandType = CommandType.Text;

@@ -109,9 +109,9 @@ namespace ProjetoCarro
                 txt_Proprietario.Enabled = true;
                 txt_CPF.Enabled = true;
                 txt_Taxa.Enabled = true;
-                txt_Proprietario.Text = " ";
-                txt_CPF.Text = " ";
-                txt_Taxa.Text = " ";
+                txt_Proprietario.Text = "";
+                txt_CPF.Text = "";
+                txt_Taxa.Text = "";
 
         }
 
