@@ -29,10 +29,20 @@ namespace ProjetoCarro
             txt_PrecoPesquisa.Text = "";
             txt_AnoPesquisa.Text = "";
             txt_proprietarioPesq.Text = "";
+            txt_Taxa.Text = "";
+            Button_SalvarPlaca.Visible = false;
+
+
+            txt_VeiculoPesquisa.Enabled = false;
+            txt_CorPesquisa.Enabled = false;
+            txt_PrecoPesquisa.Enabled = false;
+            txt_AnoPesquisa.Enabled = false;
+            txt_proprietarioPesq.Enabled = false;
+            txt_Taxa.Enabled = false;
             try
             {
 
-
+               
                 MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
                 objcon.Open();
 
@@ -61,6 +71,9 @@ namespace ProjetoCarro
                 status = dr.GetString(8);
                 txt_PrecoPesquisa.Text = precoA;
                 txt_Taxa.Text = taxaA;
+                double taxa = Double.Parse(txt_Taxa.Text);
+                double preco = Double.Parse(txt_PrecoPesquisa.Text);
+                txt_individual.Text =  (preco - taxa).ToString();
 
 
                 if (status == "DISPONIVEL")
@@ -81,14 +94,15 @@ namespace ProjetoCarro
                     radioButton_Consig.Checked = true;
                     radioButton_Loja.Checked = false;
                 }
-                    
 
 
-                
+
+                Button_EditarCadastro.Visible = true;
 
             }
             catch(Exception erro)
             {
+                Button_EditarCadastro.Visible = false;
                 MessageBox.Show("CARRO NÃO ENCONTRADO!");
                 txtPlaca.Text = "";
                 txtPlaca.Focus();
@@ -106,6 +120,8 @@ namespace ProjetoCarro
             txt_CorPesquisa.Enabled = true;
             txt_PrecoPesquisa.Enabled = true;
             txt_AnoPesquisa.Enabled = true;
+            txtPlaca.Enabled = false;
+            
             
             radioButton_Disponivel.Enabled = true;
             
@@ -113,14 +129,18 @@ namespace ProjetoCarro
             {
                 txt_proprietarioPesq.Enabled = true;
                 txt_Taxa.Enabled = true;
-                txt_PrecoPesquisa.Enabled = false;
+                button_Excluir.Visible = true;
+                txt_individual.Enabled = true;
+                
             }
 
             else 
             {
                 txt_proprietarioPesq.Enabled = false;
                 txt_Taxa.Enabled = false;
-                txt_PrecoPesquisa.Enabled = true;
+                txt_PrecoPesquisa.Enabled = false;
+                txt_individual.Enabled = true;
+
             }
                 
                 
@@ -131,49 +151,77 @@ namespace ProjetoCarro
 
         private void Button_SalvarPlaca_Click(object sender, EventArgs e)
         {
-
+            txtPlaca.Enabled = true;
             double aux2;
             string aux = "";
 
+            
+
             if(radioButton_Consig.Checked == true)
             {
+                txt_individual.Enabled = false;
                 aux2 = Double.Parse(precoA) - Double.Parse(taxaA) + Double.Parse(txt_Taxa.Text);
                 txt_PrecoPesquisa.Text = aux2.ToString();
             }
             double aux1;
-            aux1 = Double.Parse(txt_PrecoPesquisa.Text);
-            txt_PrecoPesquisa.Text = aux1.ToString();
+            aux1 = Double.Parse(txt_individual.Text);
+            txt_individual.Text = aux1.ToString();
             if (radioButton_Consig.Checked == true)
             {
-                aux1 = Double.Parse(precoA) - Double.Parse(taxaA);
-                aux1 += Double.Parse(txt_Taxa.Text);
+                
+                if (txt_individual.Text != txt_PrecoPesquisa.Text)
+                {
+                    aux1 = Double.Parse(txt_individual.Text) + Double.Parse(txt_Taxa.Text);
+                }
+                else
+                {
+                    aux1 = Double.Parse(txt_PrecoPesquisa.Text) - Double.Parse(taxaA);
+                    aux1 += Double.Parse(txt_Taxa.Text);
+                }
+
+                txt_PrecoPesquisa.Text = aux1.ToString();
+                    
+            }
+            if (radioButton_Loja.Checked == true)
+            {
+                aux1 = Double.Parse(txt_PrecoPesquisa.Text);
             }
 
-            MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
-            
-            objcon.Open();
 
-            MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Nome=?,Cor=?,Preco=?, Ano=?, Propietario=?,Taxa=? , Status=? WHERE Placa =? ", objcon);
-            objCmd.Parameters.Add("@Nome", MySqlDbType.VarChar, 60).Value = txt_VeiculoPesquisa.Text;
-            objCmd.Parameters.Add("@Cor", MySqlDbType.VarChar, 60).Value = txt_CorPesquisa.Text;
-            objCmd.Parameters.Add("@Preco", MySqlDbType.Double).Value = aux1;
-            objCmd.Parameters.Add("@Ano", MySqlDbType.VarChar, 20).Value = txt_AnoPesquisa.Text;
-            objCmd.Parameters.Add("@Propietario", MySqlDbType.VarChar, 60).Value = txt_proprietarioPesq.Text;
-            objCmd.Parameters.Add("@Taxa", MySqlDbType.Double).Value = txt_Taxa.Text;
-            if (radioButton_Disponivel.Checked == true)
-                aux = "DISPONIVEL";
-            else
-                aux = "VENDIDO";
-            objCmd.Parameters.Add("@Status", MySqlDbType.VarChar, 12).Value = aux;
-            objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar, 20).Value = txtPlaca.Text;
+            try
+            {
+                MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
+
+                objcon.Open();
+
+                MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Nome=?,Cor=?,Preco=?, Ano=?, Propietario=?,Taxa=? , Status=? WHERE Placa =? ", objcon);
+                //objCmd.Parameters.Add("@Nome", MySqlDbType.VarChar, 60).Value = txt_VeiculoPesquisa.Text;
+                objCmd.Parameters.Add("@Cor", MySqlDbType.VarChar, 60).Value = txt_CorPesquisa.Text;
+                objCmd.Parameters.Add("@Preco", MySqlDbType.Double).Value = aux1;
+                objCmd.Parameters.Add("@Ano", MySqlDbType.VarChar, 20).Value = txt_AnoPesquisa.Text;
+                objCmd.Parameters.Add("@Propietario", MySqlDbType.VarChar, 60).Value = txt_proprietarioPesq.Text;
+                objCmd.Parameters.Add("@Taxa", MySqlDbType.Double).Value = txt_Taxa.Text;
+                if (radioButton_Disponivel.Checked == true)
+                    aux = "DISPONIVEL";
+                else
+                    aux = "VENDIDO";
+                objCmd.Parameters.Add("@Status", MySqlDbType.VarChar, 12).Value = aux;
+                objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar, 20).Value = txtPlaca.Text;
 
 
-            objCmd.CommandType = CommandType.Text;
-            objCmd.ExecuteNonQuery();
+                objCmd.CommandType = CommandType.Text;
+                objCmd.ExecuteNonQuery();
 
-            objcon.Close();
+                objcon.Close();
 
-            MessageBox.Show("Atualização concluída com sucesso!");
+                MessageBox.Show("Atualização concluída com sucesso!");
+            }
+
+            catch (Exception erro)
+            {
+                MessageBox.Show("erro: " + erro);
+            }
+           
 
 
             txt_VeiculoPesquisa.Enabled = false;
@@ -184,7 +232,9 @@ namespace ProjetoCarro
             txt_Taxa.Enabled = false;
             radioButton_Disponivel.Enabled = false;
 
+
             Button_SalvarPlaca.Visible = false;
+            button_Excluir.Visible = false;
         }
 
         private void BtnVoltar_Click(object sender, EventArgs e)
@@ -219,6 +269,60 @@ namespace ProjetoCarro
         private void radioButton_Consig_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button_Nao_Click(object sender, EventArgs e)
+        {
+            panel_excluirVeiculo.Visible = false;
+        }
+
+        private void button_Excluir_Click(object sender, EventArgs e)
+        {
+            panel_excluirVeiculo.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MySqlConnection objcon = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
+                MySqlCommand objCmd2 = new MySqlCommand("DELETE FROM `veiculos` WHERE Placa =?", objcon);
+                objcon.Open();
+                objCmd2.Parameters.Add("@Placa", MySqlDbType.VarChar, 8).Value = txtPlaca.Text;
+
+
+                objCmd2.ExecuteNonQuery();
+
+                MessageBox.Show("O VEICULO FOI EXCLUIDO!");
+                txt_VeiculoPesquisa.Text = "";
+                txt_CorPesquisa.Text = "";
+                txt_PrecoPesquisa.Text = "";
+                txt_AnoPesquisa.Text = "";
+                txt_proprietarioPesq.Text = "";
+                txt_Taxa.Text = "";
+                Button_SalvarPlaca.Visible = false;
+
+
+                txt_VeiculoPesquisa.Enabled = false;
+                txt_CorPesquisa.Enabled = false;
+                txt_PrecoPesquisa.Enabled = false;
+                txt_AnoPesquisa.Enabled = false;
+                txt_proprietarioPesq.Enabled = false;
+                txt_Taxa.Enabled = false;
+                txtPlaca.Enabled = true;
+                button_Excluir.Visible = false;
+
+
+            }
+
+            catch (Exception erro)
+            {
+                MessageBox.Show("NÃO FOI POSSIVEL EXCLUIR O VEICULO!");
+            }
+           
+
+
+            panel_excluirVeiculo.Visible = false;
         }
     }
 }

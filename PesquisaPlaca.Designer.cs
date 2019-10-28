@@ -57,14 +57,22 @@
             this.txt_Taxa = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton_Disponivel = new System.Windows.Forms.RadioButton();
             this.radioButton_Vendido = new System.Windows.Forms.RadioButton();
+            this.radioButton_Disponivel = new System.Windows.Forms.RadioButton();
+            this.button_Excluir = new System.Windows.Forms.Button();
+            this.panel_excluirVeiculo = new System.Windows.Forms.Panel();
+            this.button_Nao = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txt_individual = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.panel_excluirVeiculo.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -134,11 +142,11 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(93, 354);
+            this.label4.Location = new System.Drawing.Point(15, 352);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 30);
+            this.label4.Size = new System.Drawing.Size(181, 30);
             this.label4.TabIndex = 9;
-            this.label4.Text = "PREÇO:";
+            this.label4.Text = "PREÇO TOTAL:";
             // 
             // label5
             // 
@@ -197,6 +205,7 @@
             this.Button_EditarCadastro.TabIndex = 9;
             this.Button_EditarCadastro.Text = "EDITAR";
             this.Button_EditarCadastro.UseVisualStyleBackColor = true;
+            this.Button_EditarCadastro.Visible = false;
             this.Button_EditarCadastro.Click += new System.EventHandler(this.Button_EditarCadastro_Click);
             // 
             // Button_SalvarPlaca
@@ -365,7 +374,7 @@
             // 
             this.groupBox1.Controls.Add(this.radioButton_Consig);
             this.groupBox1.Controls.Add(this.radioButton_Loja);
-            this.groupBox1.Location = new System.Drawing.Point(520, 194);
+            this.groupBox1.Location = new System.Drawing.Point(582, 202);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(174, 89);
             this.groupBox1.TabIndex = 27;
@@ -377,24 +386,12 @@
             // 
             this.groupBox2.Controls.Add(this.radioButton_Vendido);
             this.groupBox2.Controls.Add(this.radioButton_Disponivel);
-            this.groupBox2.Location = new System.Drawing.Point(520, 313);
+            this.groupBox2.Location = new System.Drawing.Point(582, 321);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(174, 92);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "STATUS";
-            // 
-            // radioButton_Disponivel
-            // 
-            this.radioButton_Disponivel.AutoSize = true;
-            this.radioButton_Disponivel.Enabled = false;
-            this.radioButton_Disponivel.Location = new System.Drawing.Point(7, 26);
-            this.radioButton_Disponivel.Name = "radioButton_Disponivel";
-            this.radioButton_Disponivel.Size = new System.Drawing.Size(131, 24);
-            this.radioButton_Disponivel.TabIndex = 0;
-            this.radioButton_Disponivel.TabStop = true;
-            this.radioButton_Disponivel.Text = "DISPONIVEL";
-            this.radioButton_Disponivel.UseVisualStyleBackColor = true;
             // 
             // radioButton_Vendido
             // 
@@ -408,6 +405,90 @@
             this.radioButton_Vendido.Text = "VENDIDO";
             this.radioButton_Vendido.UseVisualStyleBackColor = true;
             // 
+            // radioButton_Disponivel
+            // 
+            this.radioButton_Disponivel.AutoSize = true;
+            this.radioButton_Disponivel.Enabled = false;
+            this.radioButton_Disponivel.Location = new System.Drawing.Point(7, 26);
+            this.radioButton_Disponivel.Name = "radioButton_Disponivel";
+            this.radioButton_Disponivel.Size = new System.Drawing.Size(131, 24);
+            this.radioButton_Disponivel.TabIndex = 0;
+            this.radioButton_Disponivel.TabStop = true;
+            this.radioButton_Disponivel.Text = "DISPONIVEL";
+            this.radioButton_Disponivel.UseVisualStyleBackColor = true;
+            // 
+            // button_Excluir
+            // 
+            this.button_Excluir.Location = new System.Drawing.Point(308, 446);
+            this.button_Excluir.Name = "button_Excluir";
+            this.button_Excluir.Size = new System.Drawing.Size(98, 58);
+            this.button_Excluir.TabIndex = 29;
+            this.button_Excluir.Text = "EXCLUIR";
+            this.button_Excluir.UseVisualStyleBackColor = true;
+            this.button_Excluir.Visible = false;
+            this.button_Excluir.Click += new System.EventHandler(this.button_Excluir_Click);
+            // 
+            // panel_excluirVeiculo
+            // 
+            this.panel_excluirVeiculo.Controls.Add(this.button_Nao);
+            this.panel_excluirVeiculo.Controls.Add(this.button1);
+            this.panel_excluirVeiculo.Controls.Add(this.label10);
+            this.panel_excluirVeiculo.Location = new System.Drawing.Point(526, 494);
+            this.panel_excluirVeiculo.Name = "panel_excluirVeiculo";
+            this.panel_excluirVeiculo.Size = new System.Drawing.Size(530, 194);
+            this.panel_excluirVeiculo.TabIndex = 30;
+            this.panel_excluirVeiculo.Visible = false;
+            // 
+            // button_Nao
+            // 
+            this.button_Nao.Location = new System.Drawing.Point(281, 101);
+            this.button_Nao.Name = "button_Nao";
+            this.button_Nao.Size = new System.Drawing.Size(99, 56);
+            this.button_Nao.TabIndex = 10;
+            this.button_Nao.Text = "NÃO";
+            this.button_Nao.UseVisualStyleBackColor = true;
+            this.button_Nao.Click += new System.EventHandler(this.button_Nao_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(131, 101);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(99, 56);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "SIM";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(73, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(383, 30);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "DESEJA EXCLUIR ESSE VEICULO?";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(325, 355);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 30);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "IND:";
+            // 
+            // txt_individual
+            // 
+            this.txt_individual.Enabled = false;
+            this.txt_individual.Location = new System.Drawing.Point(384, 358);
+            this.txt_individual.Name = "txt_individual";
+            this.txt_individual.Size = new System.Drawing.Size(129, 26);
+            this.txt_individual.TabIndex = 32;
+            // 
             // PesquisaPlaca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -415,6 +496,10 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(762, 524);
+            this.Controls.Add(this.txt_individual);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.panel_excluirVeiculo);
+            this.Controls.Add(this.button_Excluir);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_Taxa);
@@ -451,6 +536,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panel_excluirVeiculo.ResumeLayout(false);
+            this.panel_excluirVeiculo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -488,5 +575,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton_Vendido;
         private System.Windows.Forms.RadioButton radioButton_Disponivel;
+        private System.Windows.Forms.Button button_Excluir;
+        private System.Windows.Forms.Panel panel_excluirVeiculo;
+        private System.Windows.Forms.Button button_Nao;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_individual;
     }
 }
