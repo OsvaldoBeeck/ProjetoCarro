@@ -42,9 +42,10 @@
             // 
             // txtSim
             // 
-            this.txtSim.Location = new System.Drawing.Point(104, 131);
+            this.txtSim.Location = new System.Drawing.Point(78, 106);
+            this.txtSim.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSim.Name = "txtSim";
-            this.txtSim.Size = new System.Drawing.Size(180, 58);
+            this.txtSim.Size = new System.Drawing.Size(135, 47);
             this.txtSim.TabIndex = 1;
             this.txtSim.Text = "SIM";
             this.txtSim.UseVisualStyleBackColor = true;
@@ -52,9 +53,10 @@
             // 
             // txtNao
             // 
-            this.txtNao.Location = new System.Drawing.Point(316, 131);
+            this.txtNao.Location = new System.Drawing.Point(237, 106);
+            this.txtNao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNao.Name = "txtNao";
-            this.txtNao.Size = new System.Drawing.Size(180, 58);
+            this.txtNao.Size = new System.Drawing.Size(135, 47);
             this.txtNao.TabIndex = 2;
             this.txtNao.Text = "NÃO";
             this.txtNao.UseVisualStyleBackColor = true;
@@ -68,18 +70,18 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(617, 78);
+            this.panel1.Size = new System.Drawing.Size(463, 63);
             this.panel1.TabIndex = 3;
             // 
             // pictureMinimize
             // 
             this.pictureMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureMinimize.Image = ((System.Drawing.Image)(resources.GetObject("pictureMinimize.Image")));
-            this.pictureMinimize.Location = new System.Drawing.Point(547, 0);
-            this.pictureMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureMinimize.Location = new System.Drawing.Point(410, 0);
             this.pictureMinimize.Name = "pictureMinimize";
-            this.pictureMinimize.Size = new System.Drawing.Size(39, 35);
+            this.pictureMinimize.Size = new System.Drawing.Size(29, 28);
             this.pictureMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureMinimize.TabIndex = 26;
             this.pictureMinimize.TabStop = false;
@@ -89,10 +91,9 @@
             // 
             this.pictureClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureClose.Image = ((System.Drawing.Image)(resources.GetObject("pictureClose.Image")));
-            this.pictureClose.Location = new System.Drawing.Point(578, 0);
-            this.pictureClose.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureClose.Location = new System.Drawing.Point(434, 0);
             this.pictureClose.Name = "pictureClose";
-            this.pictureClose.Size = new System.Drawing.Size(39, 35);
+            this.pictureClose.Size = new System.Drawing.Size(29, 28);
             this.pictureClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureClose.TabIndex = 10;
             this.pictureClose.TabStop = false;
@@ -103,24 +104,27 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(70, 21);
+            this.label1.Location = new System.Drawing.Point(52, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(480, 37);
+            this.label1.Size = new System.Drawing.Size(393, 30);
             this.label1.TabIndex = 4;
             this.label1.Text = "Deseja cadastrar outro veículo?";
             // 
             // CadastrarOutroVeiculo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(617, 230);
+            this.ClientSize = new System.Drawing.Size(463, 187);
             this.Controls.Add(this.txtNao);
             this.Controls.Add(this.txtSim);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "CadastrarOutroVeiculo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alert";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

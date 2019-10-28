@@ -30,7 +30,6 @@ namespace ProjetoCarro
             txt_AnoPesquisa.Text = "";
             txt_proprietarioPesq.Text = "";
             txt_Taxa.Text = "";
-            Button_SalvarPlaca.Visible = false;
 
 
             txt_VeiculoPesquisa.Enabled = false;
@@ -108,10 +107,6 @@ namespace ProjetoCarro
                 txtPlaca.Focus();
             }
 
-                
-      
-
-
         }
 
         private void Button_EditarCadastro_Click(object sender, EventArgs e)
@@ -121,6 +116,7 @@ namespace ProjetoCarro
             txt_PrecoPesquisa.Enabled = true;
             txt_AnoPesquisa.Enabled = true;
             txtPlaca.Enabled = false;
+            Button_EditarCadastro.Enabled = false;
             
             
             radioButton_Disponivel.Enabled = true;
@@ -155,7 +151,9 @@ namespace ProjetoCarro
             double aux2;
             string aux = "";
 
-            
+            double taxa = Double.Parse(txt_Taxa.Text);
+            double preco = Double.Parse(txt_PrecoPesquisa.Text);
+
 
             if(radioButton_Consig.Checked == true)
             {
@@ -169,7 +167,7 @@ namespace ProjetoCarro
             if (radioButton_Consig.Checked == true)
             {
                 
-                if (txt_individual.Text != txt_PrecoPesquisa.Text)
+                if ((preco - taxa).ToString() != txt_PrecoPesquisa.Text)
                 {
                     aux1 = Double.Parse(txt_individual.Text) + Double.Parse(txt_Taxa.Text);
                 }
@@ -184,7 +182,8 @@ namespace ProjetoCarro
             }
             if (radioButton_Loja.Checked == true)
             {
-                aux1 = Double.Parse(txt_PrecoPesquisa.Text);
+                aux1 = Double.Parse(txt_individual.Text);
+                txt_PrecoPesquisa.Text = txt_individual.Text;
             }
 
 
@@ -195,7 +194,7 @@ namespace ProjetoCarro
                 objcon.Open();
 
                 MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Nome=?,Cor=?,Preco=?, Ano=?, Propietario=?,Taxa=? , Status=? WHERE Placa =? ", objcon);
-                //objCmd.Parameters.Add("@Nome", MySqlDbType.VarChar, 60).Value = txt_VeiculoPesquisa.Text;
+                objCmd.Parameters.Add("@Nome", MySqlDbType.VarChar, 60).Value = txt_VeiculoPesquisa.Text;
                 objCmd.Parameters.Add("@Cor", MySqlDbType.VarChar, 60).Value = txt_CorPesquisa.Text;
                 objCmd.Parameters.Add("@Preco", MySqlDbType.Double).Value = aux1;
                 objCmd.Parameters.Add("@Ano", MySqlDbType.VarChar, 20).Value = txt_AnoPesquisa.Text;
@@ -221,9 +220,9 @@ namespace ProjetoCarro
             {
                 MessageBox.Show("erro: " + erro);
             }
-           
 
 
+            Button_EditarCadastro.Enabled = true;
             txt_VeiculoPesquisa.Enabled = false;
             txt_CorPesquisa.Enabled = false;
             txt_PrecoPesquisa.Enabled = false;
@@ -231,8 +230,9 @@ namespace ProjetoCarro
             txt_proprietarioPesq.Enabled = false; 
             txt_Taxa.Enabled = false;
             radioButton_Disponivel.Enabled = false;
+            txt_individual.Enabled = false;
 
-
+            
             Button_SalvarPlaca.Visible = false;
             button_Excluir.Visible = false;
         }
