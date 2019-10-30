@@ -33,7 +33,7 @@ namespace ProjetoCarro
 
 
                 MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
-                MySqlCommand cmd = new MySqlCommand(@"SELECT * FROM veiculos WHERE Nome = ? and Status = 'DISPONIVEL'", conn);
+                MySqlCommand cmd = new MySqlCommand(@"SELECT * FROM veiculos WHERE Nome LIKE '%' @Nome '%' and Status = 'DISPONIVEL'", conn);
                 cmd.Parameters.Add("@Nome", MySqlDbType.VarChar, 60).Value = txt_Buscar.Text;
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

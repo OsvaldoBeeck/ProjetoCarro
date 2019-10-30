@@ -38,6 +38,8 @@ namespace ProjetoCarro
             txt_AnoPesquisa.Enabled = false;
             txt_proprietarioPesq.Enabled = false;
             txt_Taxa.Enabled = false;
+
+           
             try
             {
 
@@ -95,7 +97,11 @@ namespace ProjetoCarro
                 }
 
 
-
+                if (radioButton_Vendido.Checked == true)
+                {
+                    txt_proprietarioPesq.Text = "------";
+                    txt_Taxa.Text = "0";
+                }
                 Button_EditarCadastro.Visible = true;
 
             }
@@ -117,8 +123,23 @@ namespace ProjetoCarro
             txt_AnoPesquisa.Enabled = true;
             txtPlaca.Enabled = false;
             Button_EditarCadastro.Enabled = false;
+
+            if (radioButton_Loja.Checked == true)
+            {
+                txt_proprietarioPesq.Enabled = false;
+                txt_Taxa.Enabled = false;
+            }
+            else
+            {
+                txt_proprietarioPesq.Enabled = true;
+                txt_Taxa.Enabled = true;
+            }
             
-            
+            if (radioButton_Vendido.Checked == true)
+            {
+                radioButton_Consig.Enabled = true;
+                radioButton_Loja.Enabled = true;
+            }
             radioButton_Disponivel.Enabled = true;
             
             if (radioButton_Consig.Checked == true)
@@ -127,7 +148,8 @@ namespace ProjetoCarro
                 txt_Taxa.Enabled = true;
                 button_Excluir.Visible = true;
                 txt_individual.Enabled = true;
-                
+                txt_PrecoPesquisa.Enabled = false;
+
             }
 
             else 
@@ -136,7 +158,6 @@ namespace ProjetoCarro
                 txt_Taxa.Enabled = false;
                 txt_PrecoPesquisa.Enabled = false;
                 txt_individual.Enabled = true;
-
             }
                 
                 
@@ -154,6 +175,8 @@ namespace ProjetoCarro
             double taxa = Double.Parse(txt_Taxa.Text);
             double preco = Double.Parse(txt_PrecoPesquisa.Text);
 
+            radioButton_Loja.Enabled = false;
+            radioButton_Consig.Enabled = false;
 
             if(radioButton_Consig.Checked == true)
             {
@@ -193,7 +216,7 @@ namespace ProjetoCarro
 
                 objcon.Open();
 
-                MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Nome=?,Cor=?,Preco=?, Ano=?, Propietario=?,Taxa=? , Status=? WHERE Placa =? ", objcon);
+                MySqlCommand objCmd = new MySqlCommand("UPDATE veiculos SET Nome=?,Cor=?,Preco=?, Ano=?, Propietario=?,Taxa=? , Status=? , Tipo=? WHERE Placa =? ", objcon);
                 objCmd.Parameters.Add("@Nome", MySqlDbType.VarChar, 60).Value = txt_VeiculoPesquisa.Text;
                 objCmd.Parameters.Add("@Cor", MySqlDbType.VarChar, 60).Value = txt_CorPesquisa.Text;
                 objCmd.Parameters.Add("@Preco", MySqlDbType.Double).Value = aux1;
@@ -205,6 +228,11 @@ namespace ProjetoCarro
                 else
                     aux = "VENDIDO";
                 objCmd.Parameters.Add("@Status", MySqlDbType.VarChar, 12).Value = aux;
+                if (radioButton_Loja.Checked == true)
+                    aux = "LOJA";
+                else
+                    aux = "CONSIGNADO";
+                objCmd.Parameters.Add("@Tipo", MySqlDbType.VarChar, 12).Value = aux;
                 objCmd.Parameters.Add("@Placa", MySqlDbType.VarChar, 20).Value = txtPlaca.Text;
 
 
@@ -268,7 +296,7 @@ namespace ProjetoCarro
 
         private void radioButton_Consig_CheckedChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button_Nao_Click(object sender, EventArgs e)
@@ -300,6 +328,7 @@ namespace ProjetoCarro
                 txt_AnoPesquisa.Text = "";
                 txt_proprietarioPesq.Text = "";
                 txt_Taxa.Text = "";
+                txt_individual.Text = "";
                 Button_SalvarPlaca.Visible = false;
 
 
@@ -323,6 +352,11 @@ namespace ProjetoCarro
 
 
             panel_excluirVeiculo.Visible = false;
+        }
+
+        private void RadioButton_Loja_CheckedChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

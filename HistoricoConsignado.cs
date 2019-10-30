@@ -73,7 +73,7 @@ namespace ProjetoCarro
 
 
                 MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;userid=root;database=dados_veiculos; password=");
-                MySqlCommand cmd = new MySqlCommand(@"SELECT * FROM vendas WHERE Cliente = ? and Tipo = 'CONSIGNADO'", conn);
+                MySqlCommand cmd = new MySqlCommand(@"SELECT * FROM vendas WHERE Cliente LIKE '%' @Nome '%' and Tipo = 'CONSIGNADO'", conn);
                 cmd.Parameters.Add("@Nome", MySqlDbType.VarChar, 60).Value = txt_Consignado.Text;
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

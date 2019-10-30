@@ -112,7 +112,7 @@
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(44, 32);
-            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
@@ -171,7 +171,7 @@
             this.txt_AnoPesquisa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_AnoPesquisa.Name = "txt_AnoPesquisa";
             this.txt_AnoPesquisa.Size = new System.Drawing.Size(87, 20);
-            this.txt_AnoPesquisa.TabIndex = 4;
+            this.txt_AnoPesquisa.TabIndex = 5;
             // 
             // txt_CorPesquisa
             // 
@@ -180,7 +180,7 @@
             this.txt_CorPesquisa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_CorPesquisa.Name = "txt_CorPesquisa";
             this.txt_CorPesquisa.Size = new System.Drawing.Size(167, 20);
-            this.txt_CorPesquisa.TabIndex = 3;
+            this.txt_CorPesquisa.TabIndex = 4;
             this.txt_CorPesquisa.TextChanged += new System.EventHandler(this.txt_CorPesquisa_TextChanged);
             // 
             // txt_PrecoPesquisa
@@ -190,7 +190,7 @@
             this.txt_PrecoPesquisa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_PrecoPesquisa.Name = "txt_PrecoPesquisa";
             this.txt_PrecoPesquisa.Size = new System.Drawing.Size(87, 20);
-            this.txt_PrecoPesquisa.TabIndex = 5;
+            this.txt_PrecoPesquisa.TabIndex = 6;
             // 
             // txt_VeiculoPesquisa
             // 
@@ -199,7 +199,7 @@
             this.txt_VeiculoPesquisa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_VeiculoPesquisa.Name = "txt_VeiculoPesquisa";
             this.txt_VeiculoPesquisa.Size = new System.Drawing.Size(167, 20);
-            this.txt_VeiculoPesquisa.TabIndex = 2;
+            this.txt_VeiculoPesquisa.TabIndex = 3;
             // 
             // Button_EditarCadastro
             // 
@@ -207,7 +207,7 @@
             this.Button_EditarCadastro.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Button_EditarCadastro.Name = "Button_EditarCadastro";
             this.Button_EditarCadastro.Size = new System.Drawing.Size(65, 36);
-            this.Button_EditarCadastro.TabIndex = 9;
+            this.Button_EditarCadastro.TabIndex = 11;
             this.Button_EditarCadastro.Text = "EDITAR";
             this.Button_EditarCadastro.UseVisualStyleBackColor = true;
             this.Button_EditarCadastro.Visible = false;
@@ -219,7 +219,7 @@
             this.Button_SalvarPlaca.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Button_SalvarPlaca.Name = "Button_SalvarPlaca";
             this.Button_SalvarPlaca.Size = new System.Drawing.Size(65, 38);
-            this.Button_SalvarPlaca.TabIndex = 7;
+            this.Button_SalvarPlaca.TabIndex = 12;
             this.Button_SalvarPlaca.Text = "SALVAR";
             this.Button_SalvarPlaca.UseVisualStyleBackColor = true;
             this.Button_SalvarPlaca.Visible = false;
@@ -231,7 +231,7 @@
             this.btnVoltar.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(65, 36);
-            this.btnVoltar.TabIndex = 8;
+            this.btnVoltar.TabIndex = 10;
             this.btnVoltar.Text = "VOLTAR";
             this.btnVoltar.UseVisualStyleBackColor = true;
             this.btnVoltar.Click += new System.EventHandler(this.BtnVoltar_Click);
@@ -292,7 +292,7 @@
             this.txt_proprietarioPesq.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_proprietarioPesq.Name = "txt_proprietarioPesq";
             this.txt_proprietarioPesq.Size = new System.Drawing.Size(211, 20);
-            this.txt_proprietarioPesq.TabIndex = 6;
+            this.txt_proprietarioPesq.TabIndex = 8;
             // 
             // radioButton_Loja
             // 
@@ -306,6 +306,7 @@
             this.radioButton_Loja.TabStop = true;
             this.radioButton_Loja.Text = "LOJA";
             this.radioButton_Loja.UseVisualStyleBackColor = true;
+            this.radioButton_Loja.CheckedChanged += new System.EventHandler(this.RadioButton_Loja_CheckedChanged);
             // 
             // panel1
             // 
@@ -374,16 +375,16 @@
             this.txt_Taxa.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.txt_Taxa.Name = "txt_Taxa";
             this.txt_Taxa.Size = new System.Drawing.Size(76, 20);
-            this.txt_Taxa.TabIndex = 26;
+            this.txt_Taxa.TabIndex = 9;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton_Consig);
             this.groupBox1.Controls.Add(this.radioButton_Loja);
             this.groupBox1.Location = new System.Drawing.Point(388, 131);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(116, 58);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
@@ -395,9 +396,9 @@
             this.groupBox2.Controls.Add(this.radioButton_Vendido);
             this.groupBox2.Controls.Add(this.radioButton_Disponivel);
             this.groupBox2.Location = new System.Drawing.Point(388, 209);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(116, 60);
             this.groupBox2.TabIndex = 28;
             this.groupBox2.TabStop = false;
@@ -408,7 +409,7 @@
             this.radioButton_Vendido.AutoSize = true;
             this.radioButton_Vendido.Enabled = false;
             this.radioButton_Vendido.Location = new System.Drawing.Point(4, 36);
-            this.radioButton_Vendido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton_Vendido.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_Vendido.Name = "radioButton_Vendido";
             this.radioButton_Vendido.Size = new System.Drawing.Size(74, 17);
             this.radioButton_Vendido.TabIndex = 1;
@@ -421,7 +422,7 @@
             this.radioButton_Disponivel.AutoSize = true;
             this.radioButton_Disponivel.Enabled = false;
             this.radioButton_Disponivel.Location = new System.Drawing.Point(5, 17);
-            this.radioButton_Disponivel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.radioButton_Disponivel.Margin = new System.Windows.Forms.Padding(2);
             this.radioButton_Disponivel.Name = "radioButton_Disponivel";
             this.radioButton_Disponivel.Size = new System.Drawing.Size(89, 17);
             this.radioButton_Disponivel.TabIndex = 0;
@@ -432,10 +433,10 @@
             // button_Excluir
             // 
             this.button_Excluir.Location = new System.Drawing.Point(205, 290);
-            this.button_Excluir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Excluir.Margin = new System.Windows.Forms.Padding(2);
             this.button_Excluir.Name = "button_Excluir";
             this.button_Excluir.Size = new System.Drawing.Size(65, 38);
-            this.button_Excluir.TabIndex = 29;
+            this.button_Excluir.TabIndex = 13;
             this.button_Excluir.Text = "EXCLUIR";
             this.button_Excluir.UseVisualStyleBackColor = true;
             this.button_Excluir.Visible = false;
@@ -446,8 +447,8 @@
             this.panel_excluirVeiculo.Controls.Add(this.button_Nao);
             this.panel_excluirVeiculo.Controls.Add(this.button1);
             this.panel_excluirVeiculo.Controls.Add(this.label10);
-            this.panel_excluirVeiculo.Location = new System.Drawing.Point(90, 108);
-            this.panel_excluirVeiculo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel_excluirVeiculo.Location = new System.Drawing.Point(90, 131);
+            this.panel_excluirVeiculo.Margin = new System.Windows.Forms.Padding(2);
             this.panel_excluirVeiculo.Name = "panel_excluirVeiculo";
             this.panel_excluirVeiculo.Size = new System.Drawing.Size(353, 126);
             this.panel_excluirVeiculo.TabIndex = 30;
@@ -456,7 +457,7 @@
             // button_Nao
             // 
             this.button_Nao.Location = new System.Drawing.Point(187, 66);
-            this.button_Nao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Nao.Margin = new System.Windows.Forms.Padding(2);
             this.button_Nao.Name = "button_Nao";
             this.button_Nao.Size = new System.Drawing.Size(66, 36);
             this.button_Nao.TabIndex = 10;
@@ -467,7 +468,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(87, 66);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(66, 36);
             this.button1.TabIndex = 9;
@@ -503,10 +504,10 @@
             // 
             this.txt_individual.Enabled = false;
             this.txt_individual.Location = new System.Drawing.Point(256, 233);
-            this.txt_individual.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_individual.Margin = new System.Windows.Forms.Padding(2);
             this.txt_individual.Name = "txt_individual";
             this.txt_individual.Size = new System.Drawing.Size(87, 20);
-            this.txt_individual.TabIndex = 32;
+            this.txt_individual.TabIndex = 7;
             // 
             // PesquisaPlaca
             // 
